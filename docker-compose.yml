@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api:
+    image: service:latest
+    ports:
+      - "8000:8000"
+    command: [ "python", "run_api.py" ]
+    env_file: ".env"
+
+  redis_rabbit_consumer:
+    image: service:latest
+    command: [ "python", "run_redis_rabbit_consumer.py" ]
+    env_file: ".env"
+
+  rabbit_db_consumer:
+    image: service:latest
+    command: [ "python", "run_rabbit_db_consumer.py" ]
+    env_file: ".env"
+
+  tg_consumers:
+    image: service:latest
+    command: [ "python", "run_tg_consumers.py" ]
+    env_file: ".env"
+    volumes:
+      - ./volumes/main_session.session:/workdir/main_session.session
+
+networks:
+  default:
+    name: service_network
+
+
+
+
