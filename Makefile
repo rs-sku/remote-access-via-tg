@@ -38,7 +38,7 @@ fix:
 	mypy --strict app
 
 tdb:
-	docker run -p "5431:5432" --rm -e POSTGRES_PASSWORD=postgres --name test_db postgres:16.3
+	docker run -d -p "5431:5432" --rm -e POSTGRES_PASSWORD=postgres --name test_db postgres:16.3
 
 test:
 	pytest --cov=app
