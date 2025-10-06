@@ -1,4 +1,4 @@
-from unittest.mock import ANY, AsyncMock, Mock, call, patch
+from unittest.mock import ANY, AsyncMock, call, patch
 
 
 def test_api_execute(app_client):

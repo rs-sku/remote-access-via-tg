@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  check:
+  check_and_test:
     runs-on: ubuntu-latest
     strategy:
       matrix:

@@ -1,7 +1,6 @@
 import asyncio
 import uuid
 from typing import Type
-from unittest.mock import AsyncMock, Mock
 
 import asyncpg
 import fakeredis
@@ -10,7 +9,6 @@ import pytest_asyncio
 from asyncpg import Pool
 from starlette.testclient import TestClient
 
-from app.api.api import get_db, get_rabbit
 from app.factory import Factory
 from app.settings import Settings
 from app.storages.db_postgres import Db
